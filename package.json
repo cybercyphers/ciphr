@@ -13,6 +13,7 @@
     "build": "tsup src/index.js --format cjs,esm --dts --clean",
     "prepublishOnly": "npm run build",
     "test": "echo \"No tests\" && exit 0"
+    "start": "node src/index.js",
   },
   "keywords": [
     "matrix",
