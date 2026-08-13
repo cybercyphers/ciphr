@@ -29,7 +29,7 @@ const _dirname = dirname(fileURLToPath(import.meta.url));
 the placeholder should always be "import.meta.url" nothing else in order to resolve to the user's path directly instead of cyphr path...
 */
 const __dirname = (moduleUrl) =>{
-    dirname(fileURLToPath(moduleUrl));
+    return dirname(fileURLToPath(moduleUrl));
 };
  
 
