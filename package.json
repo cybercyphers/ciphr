@@ -1,6 +1,6 @@
 {
   "name": "cyphr",
-  "version": "1.0.0beta",
+  "version": "1.0.0",
   "description": "Developer package for Devs",
   "type": "module",
   "main": "./dist/index.cjs",
