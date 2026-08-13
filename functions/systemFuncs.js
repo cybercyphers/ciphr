@@ -37,7 +37,7 @@ we promisify execFile to make it async and avoid errors if the media is very lar
 */
 const execsync = promisify(execFile);
 
-async function ytvid(link=null,px="22/best"){
+async function ytvid(link=null,px="22/best", { bisect=false }){
    
     
     if(!link){
@@ -75,7 +75,7 @@ async function ytvid(link=null,px="22/best"){
       "-g",
       `${String(link)}`
   ]);
-    console.log({ stdout })
+return {  requesturl:link, downloadurl:stdout };
     
 };
 ytvid("https://youtube.com/shorts/Boep7EPKyas?si=ObS_GUDjtZhOser-")
