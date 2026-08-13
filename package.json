@@ -1,7 +1,7 @@
 {
-  "name": "trial",
-  "version": "1.0.0",
-  "description": "Developer package for logging information and timing",
+  "name": "cyphr",
+  "version": "1.0.0beta",
+  "description": "Developer package for Devs",
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
@@ -20,7 +20,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsup index.js --format cjs,esm --dts --clean",
+    "build": "tsup src/index.js --format cjs,esm --dts --clean",
     "prepublishOnly": "npm run build",
     "test": "echo \"No tests\" && exit 0"
   },
