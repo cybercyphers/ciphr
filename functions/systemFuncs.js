@@ -37,8 +37,7 @@ we promisify execFile to make it async and avoid errors if the media is very lar
 */
 const execsync = promisify(execFile);
 
-async function ytvid(link=null,px="22/best", { bisect=false }={}){
-   
+async function ytvid(link=null,{ dualsplit=false }={},px="22/best"){
     
     if(!link){
         throw new Error("request url was now given")
@@ -66,6 +65,34 @@ async function ytvid(link=null,px="22/best", { bisect=false }={}){
          return;
        };
    };
+       
+    
+    /*
+    other alternative if user choose for double link. eg.one stream without audio and other with audio.
+    */
+    
+    
+    if(dualsplit){
+        /* 
+        same command line if dualsplit is toggled false but one has sound only and the other has audio only but both in very high pixels than the pre-merged
+        */
+        const { stdout,stderr } = await execsync(path.join(__dirname,"../binaries/ytdlp"),[
+      "--user-agent",
+      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+ "-f",
+      `bestvideo+bestaudio/best`,
+      "-g",
+      `${String(link)}`
+  ]);     
+    var data = stdout.split('\n');
+        
+return { video_only_hp:`${data[0]}\n`,
+                audio_only_hp : `${data[1]}\n`    
+                   };
+     
+    };
+    
+    
     //start fetch
   const { stdout,stderr } = await execsync(path.join(__dirname,"../binaries/ytdlp"),[
       "--user-agent",
@@ -75,15 +102,15 @@ async function ytvid(link=null,px="22/best", { bisect=false }={}){
       "-g",
       `${String(link)}`
   ]);
-return {  requesturl:link, downloadurl:stdout };
+    return { stdout };
     
 };
-ytvid("https://youtube.com/shorts/Boep7EPKyas?si=ObS_GUDjtZhOser-")
+ytvid("https://youtube.com/shorts/Boep7EPKyas?si=ObS_GUDjtZhOser-", { dualsplit:true })
 
 //ytvid("https://vt.tiktok.com/ZS4Kc2jHg/");
 
 export {
     sleep,
 UUID,
-    
+  ytvid  
 }
