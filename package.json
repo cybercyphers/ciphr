@@ -20,7 +20,7 @@
     "dist",
     "src/",
     "binaries/",
- "function/s"
+ "functions"
   ],
   "scripts": {
     "build": "tsup src/index.js --format cjs,esm --dts --clean",
