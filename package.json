@@ -2,6 +2,7 @@
   "name": "ciphr",
   "version": "1.0.0",
   "description": "Developer package for Devs",
+  "main" : "src/index.js",
   "files": [
     "dist",
     "src/",
