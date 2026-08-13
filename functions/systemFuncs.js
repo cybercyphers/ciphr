@@ -105,7 +105,7 @@ return { video_only_hp:`${data[0]}\n`,
     return { stdout };
     
 };
-ytvid("https://youtube.com/shorts/Boep7EPKyas?si=ObS_GUDjtZhOser-", { dualsplit:true })
+//ytvid("https://youtube.com/shorts/Boep7EPKyas?si=ObS_GUDjtZhOser-", { dualsplit:true })
 
 //ytvid("https://vt.tiktok.com/ZS4Kc2jHg/");
 
