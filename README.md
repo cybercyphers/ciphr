@@ -24,9 +24,7 @@ Import the module and start:
 const ciphr = require('ciphr');
 
 // ES Modules
-// import ciphr from 'ciphr';
-
-
+ import ciphr from 'ciphr';
 ```
 
 ## 🎛️ Core Features
