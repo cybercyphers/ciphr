@@ -2,20 +2,6 @@
   "name": "ciphr",
   "version": "1.0.0",
   "description": "Developer package for Devs",
-  "type": "module",
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "exports": {
-    ".": {
-      "types": {
-        "require": "./dist/index.d.cts",
-        "default": "./dist/index.d.ts"
-      },
-      "require": "./dist/index.cjs",
-      "default": "./dist/index.js"
-    }
-  },
   "files": [
     "dist",
     "src/",
