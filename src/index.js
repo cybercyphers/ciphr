@@ -22,9 +22,15 @@ import {
 } from "../functions/systemFuncs.js";
 const _dirname = dirname(fileURLToPath(import.meta.url));
 
-//since in  type : module, __dirname  is not defined, we define it  here to be accessible without manually defining path.join(__dirname); to help developers. 
+/*since in  type : module, __dirname  is not defined, we define it  here to be accessible without manually defining path.join(__dirname); to help developers. 
 
-const __dirname = dirname(fileURLToPath(import.meta.url));
+
+
+the placeholder should always be "import.meta.url" nothing else in order to resolve to the user's path directly instead of cyphr path...
+*/
+const __dirname = (moduleUrl) =>{
+    dirname(fileURLToPath(moduleUrl));
+};
  
 
 //console.log(JSON.stringify(process.env));
