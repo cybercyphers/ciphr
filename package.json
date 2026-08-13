@@ -20,8 +20,7 @@
     "dist",
     "src/",
     "binaries/",
-    "ffmpeg/",
- "functions"
+ "function/s"
   ],
   "scripts": {
     "build": "tsup src/index.js --format cjs,esm --dts --clean",
