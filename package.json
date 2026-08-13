@@ -2,19 +2,12 @@
   "name": "ciphr",
   "version": "1.0.0",
   "description": "Developer package for Devs",
-  "main" : "src/index.js",
+  "main": "src/index.js",
   "files": [
-    "dist",
     "src/",
     "binaries/",
- "functions/"
+    "functions/"
   ],
-  "scripts": {
-    "build": "tsup src/index.js --format cjs,esm --dts --clean",
-    "prepublishOnly": "npm run build",
-    "test": "echo \"No tests\" && exit 0"
-    "start": "node src/index.js",
-  },
   "keywords": [
     "matrix",
     "decentralized",
@@ -25,12 +18,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cybercyphers/"
-  },
-  "devDependencies": {
-    "tar": "^7.5.22",
-    "tsup": "^8.4.0",
-    "typescript": "^5.7.3"
+    "url": "git+https://github.com"
   },
   "engines": {
     "node": ">=20"
