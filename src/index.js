@@ -19,7 +19,7 @@ import { fileURLToPath } from "node:url";
 import {
     sleep,
     UUID as randomuuid
-} from "./functions/systemFuncs.js";
+} from "../functions/systemFuncs.js";
 const _dirname = dirname(fileURLToPath(import.meta.url));
 
 //since in  type : module, __dirname  is not defined, we define it  here to be accessible without manually defining path.join(__dirname); to help developers. 
