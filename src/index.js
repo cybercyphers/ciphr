@@ -52,7 +52,8 @@ const defaultTools = {
 }
 
 
-export default defaultTools, {
+export  {
+    defaultTools as default,
     __Dirname
 };
 
