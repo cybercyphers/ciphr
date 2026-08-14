@@ -19,7 +19,6 @@ jobs:
 
       - name: Install Project Dependencies
         run: |
-          npm cache clean
           rm -f package-lock.json
           npm install
 
