@@ -37,7 +37,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cybercyphers/cyrus"
+    "url": "git+https://github.com/cybercyphers/damsel"
   },
   "devDependencies": {
     "tar": "^7.5.22",
