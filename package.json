@@ -1,5 +1,5 @@
 {
-  "name": "ciphr",
+  "name": "cyphr",
   "version": "1.0.0",
   "description": "Developer package for Devs",
   "type": "module",
@@ -37,7 +37,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cybercyphers/ciphr"
+    "url": "git+https://github.com/cybercyphers/cyphr"
   },
   "devDependencies": {
     "tar": "^7.5.22",
