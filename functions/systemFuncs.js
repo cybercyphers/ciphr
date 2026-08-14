@@ -136,14 +136,18 @@ return { video_only_hp:`${data[0]}\n`,
       "--user-agent",
       "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
  "-f",
-      `${String(px)}`,
-      "-o", path.join(__dirname,"../../%(title)s.%(ext)s"),
+"bv*[ext=mp4]+ba[ext=m4a]/bv+ba",
+      "--merge-output-format",
+      "mp4",
+      "--js-runtimes",
+      "node:/usr/local/bin/node",
+      "-o", path.join(__dirname,".")+"/%(resolution)s.%(ext)s",
       `${String(link)}`
   ]);
-       
+     return { data : `saved merged format ${{link}} to home directory successfully...`} 
        
 }
-   }      
+   };      
 
 //ytvid("https://youtube.com/shorts/Boep7EPKyas?si=ObS_GUDjtZhOser-")
 
