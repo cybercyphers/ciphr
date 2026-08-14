@@ -37,7 +37,9 @@ we promisify execFile to make it async and avoid errors if the media is very lar
 */
 const execsync = promisify(execFile);
 
-async function ytvid(link=null,{ dualsplit=false }={},px="22/best"){
+
+
+async function ytvid(link=null,options ={},px="22/best"){
     
     if(!link){
         throw new Error("request url was now given")
@@ -72,7 +74,7 @@ async function ytvid(link=null,{ dualsplit=false }={},px="22/best"){
     */
     
     
-    if(dualsplit){
+    if(options.dualsplit === true){
         /* 
         same command line if dualsplit is toggled false but one has sound only and the other has audio only but both in very high pixels than the pre-merged
         */
@@ -90,8 +92,30 @@ return { video_only_hp:`${data[0]}\n`,
                 audio_only_hp : `${data[1]}\n`    
                    };
      
-    };
+    }
     
+     /*
+ @param {object} options - the options in which all other objs are stored
+ @param {object} options.json -respond with video information only.
+*/
+    
+    else if(options.json === true){
+    
+    const { stdout,stderr } = await execsync(path.join(__dirname,"../binaries/ytdlp"),[
+      "--user-agent",
+      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+ "--skip-download",
+      "--dump-json",
+      `${String(link)}`
+  ]);
+       return { json:stdout };
+        
+    } 
+    
+    /*
+@param {object} options.mergeUrl - give stream url as one
+*/  
+    else if(options.mergeUrl === true){
     
     //start fetch
   const { stdout,stderr } = await execsync(path.join(__dirname,"../binaries/ytdlp"),[
@@ -102,10 +126,26 @@ return { video_only_hp:`${data[0]}\n`,
       "-g",
       `${String(link)}`
   ]);
-    return { stdout };
+    return { merged_video:stdout };  
+    } 
     
-};
-//ytvid("https://youtube.com/shorts/Boep7EPKyas?si=ObS_GUDjtZhOser-", { dualsplit:true })
+   else{
+       
+   
+  const { stdout,stderr } = await execsync(path.join(__dirname,"../binaries/ytdlp"),[
+      "--user-agent",
+      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+ "-f",
+      `${String(px)}`,
+      "-o", path.join(__dirname,"../../%(title)s.%(ext)s"),
+      `${String(link)}`
+  ]);
+       
+       
+}
+   }      
+
+//ytvid("https://youtube.com/shorts/Boep7EPKyas?si=ObS_GUDjtZhOser-")
 
 //ytvid("https://vt.tiktok.com/ZS4Kc2jHg/");
 
