@@ -1,4 +1,4 @@
-# cyphr
+# cyrus
 
 > Sleek, lightweight, low-level data transformation and string obfuscation utility for terminal nodes. Built by **Cyber Cyphers**.
 
@@ -12,7 +12,7 @@
 Install the package directly into your project via the npm registry:
 
 ```bash
-npm install cyphr
+npm install cyrus
 ```
 
 ## 🚀 Quick Start
@@ -21,10 +21,10 @@ Import the module and start:
 
 ```javascript
 // CommonJS
-const cyphr = require('cyphr');
+const cyrus = require('cyrus');
 
 // ES Modules
- import cyphr from 'cyphr';
+ import cyrus from 'cyrus';
 ```
 
 ## 🎛️ Core Features
