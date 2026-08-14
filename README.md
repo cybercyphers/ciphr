@@ -1,4 +1,4 @@
-# cyrus
+# damsel
 
 > Sleek, lightweight, low-level data transformation and string obfuscation utility for terminal nodes. Built by **Cyber Cyphers**.
 
@@ -12,7 +12,7 @@
 Install the package directly into your project via the npm registry:
 
 ```bash
-npm install cyrus
+npm install damsel
 ```
 
 ## 🚀 Quick Start
@@ -21,10 +21,10 @@ Import the module and start:
 
 ```javascript
 // CommonJS
-const cyrus = require('cyrus');
+const damsel = require(‘damsel’);
 
 // ES Modules
- import cyrus from 'cyrus';
+ import damsel from 'damsel';
 ```
 
 ## 🎛️ Core Features
