@@ -1,4 +1,4 @@
-# ciphr
+# cyphr
 
 > Sleek, lightweight, low-level data transformation and string obfuscation utility for terminal nodes. Built by **Cyber Cyphers**.
 
@@ -12,7 +12,7 @@
 Install the package directly into your project via the npm registry:
 
 ```bash
-npm install ciphr
+npm install cyphr
 ```
 
 ## 🚀 Quick Start
@@ -21,10 +21,10 @@ Import the module and start:
 
 ```javascript
 // CommonJS
-const ciphr = require('ciphr');
+const cyphr = require('cyphr');
 
 // ES Modules
- import ciphr from 'ciphr';
+ import cyphr from 'cyphr';
 ```
 
 ## 🎛️ Core Features
