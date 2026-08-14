@@ -33,9 +33,9 @@ the placeholder should always be "import.meta.url" nothing else in order to reso
 */
 
 
-const __Dirname(import_meta_url)=>{
+const __Dirname = (import_meta_url)=>{
     return dirname(fileURLToPath(import_meta_url));
-}
+};
 
  
 
