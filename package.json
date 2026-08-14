@@ -1,6 +1,6 @@
 {
-  "name": "cyphr",
-  "version": "1.0.1",
+  "name": "cyrus",
+  "version": "0.0.1",
   "description": "Developer package for Devs",
   "type": "module",
   "main": "./dist/index.cjs",
@@ -37,7 +37,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cybercyphers/cyphr"
+    "url": "git+https://github.com/cybercyphers/cyrus"
   },
   "devDependencies": {
     "tar": "^7.5.22",
