@@ -18,19 +18,16 @@ import path,{ join,dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import {
     sleep,
-    UUID as randomuuid
+    UUID as randomuuid,
+    ytvid
 } from "../functions/systemFuncs.js";
-const _dirname = dirname(fileURLToPath(import.meta.url));
-
-/*since in  type : module, __dirname  is not defined, we define it  here to be accessible without manually defining path.join(__dirname); to help developers. 
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 
 
-the placeholder should always be "import.meta.url" nothing else in order to resolve to the user's path directly instead of cyphr path...
-*/
-const __dirname = (moduleUrl) =>{
-    return dirname(fileURLToPath(moduleUrl));
-};
+
+
+
  
 
 //console.log(JSON.stringify(process.env));
@@ -40,12 +37,12 @@ var PORT = process.env.SERVER_PORT;
 //console.log(`\n\x1b[1;32mstarting server on port ${PORT} \x1b[0m`);
 
 
-
-
-
-export {
-    __dirname,
-   randomuuid
+const defaultTools = {
+    randomuuid,
+    ytvid
 }
+
+
+export default defaultTools;
 
 //EOF
