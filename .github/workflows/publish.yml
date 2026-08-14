@@ -18,7 +18,10 @@ jobs:
           registry-url: 'https://npmjs.org'
 
       - name: Install Project Dependencies
-        run: npm ci
+        run: |
+          npm cache clean --force
+          rm -f package-lock.json
+          npm install
 
       - name: Publish Package to npm Registry
         run: npm publish
