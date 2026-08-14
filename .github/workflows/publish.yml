@@ -1,0 +1,26 @@
+name: Publish Package to npm
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js Environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          registry-url: 'https://npmjs.org'
+
+      - name: Install Project Dependencies
+        run: npm ci
+
+      - name: Publish Package to npm Registry
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.CYPH_TOKEN }}
