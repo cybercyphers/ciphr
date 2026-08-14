@@ -1,6 +1,6 @@
 {
   "name": "damsel",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Developer package for Devs",
   "type": "module",
   "main": "./dist/index.cjs",
