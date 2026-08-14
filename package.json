@@ -1,6 +1,6 @@
 {
-  "name": "cyrus",
-  "version": "0.0.1",
+  "name": "damsel",
+  "version": "0.0.2",
   "description": "Developer package for Devs",
   "type": "module",
   "main": "./dist/index.cjs",
