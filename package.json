@@ -1,6 +1,6 @@
 {
-  "name": "damsel",
-  "version": "0.0.4",
+  "name": "decifer",
+  "version": "0.0.1",
   "description": "Developer package for Devs",
   "type": "module",
   "main": "./dist/index.cjs",
@@ -37,7 +37,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cybercyphers/damsel"
+    "url": "git+https://github.com/cybercyphers/decifer"
   },
   "devDependencies": {
     "tar": "^7.5.22",
