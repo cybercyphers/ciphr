@@ -1,4 +1,3 @@
-
 /*
 for function that are needed daily in the system.
 these functions are system functions..
@@ -47,9 +46,29 @@ async function ytvid(link=null,options ={},px="22/best"){
     //link validation, pls ensure you not trying to hack into any system here.Use the right link...
     const linkTest = /^https?:\/\/(www\.)?(youtube\.com|youtu\.be)\/.*$/i;
     
-  /* if(linkTest.test(link) !== true){
+  if(linkTest.test(link) !== true){
         throw new Error("invalid url given");
-    }*/
+    };
+    
+    try{
+    
+    /*
+    set permission to the binaries to avoid unauthorized errors from the bunaries folder
+*/
+var binary_755_permission_set = fs.readdirSync(path.join(__dirname,"../binaries/"),{ recursive:true }); 
+for(const bin of binary_755_permission_set){
+    
+ const Stats = fs.statSync(path.join(__dirname,`../binaries/${bin}`))
+ //permission checking before decision
+   var binary_permissions = (Stats.mode & 0o755).toString(8);
+    
+     if(binary_permissions !== 755){
+         /*only execute it the permission is not set to 755 wich allows read, write and execution*/
+fs.chmodSync(path.join(__dirname,`../binaries/${bin}`),0o755);
+     };
+};
+ 
+    
    if(!fs.existsSync(path.join(__dirname,"../binaries/ytdlp")) || !fs.existsSync(path.join(__dirname,"../binaries/ffmpeg")) || !fs.existsSync(path.join(__dirname,"../binaries/ffprobe"))){
        
        console.trace("\n\x1b[31msome libraries have been deleted manually, while some binaries can be recreated automatically, some will need  re-installation to be able to function...\n");
@@ -74,7 +93,7 @@ async function ytvid(link=null,options ={},px="22/best"){
     */
     
     
-    if(options.dualsplit === true){
+    if(options.dual === true){
         /* 
         same command line if dualsplit is toggled false but one has sound only and the other has audio only but both in very high pixels than the pre-merged
         */
@@ -115,7 +134,7 @@ return { video_only_hp:`${data[0]}\n`,
     /*
 @param {object} options.mergeUrl - give stream url as one
 */  
-    else if(options.mergeUrl === true){
+    else if(options.merge === true){
     
     //start fetch
   const { stdout,stderr } = await execsync(path.join(__dirname,"../binaries/ytdlp"),[
@@ -140,16 +159,19 @@ return { video_only_hp:`${data[0]}\n`,
       "--merge-output-format",
       "mp4",
       "--js-runtimes",
-      "node:/usr/local/bin/node",
+      `node:${process.execPath}`,
       "-o", path.join(__dirname,".")+"/%(resolution)s.%(ext)s",
       `${String(link)}`
   ]);
      return { data : `saved merged format ${{link}} to home directory successfully...`} 
        
+};
+    }catch(err){
+    return Err("an error occured executing command ytvid. If error persist, please report at https://github.com/cybercyphers/decifer/issues ")
 }
    };      
 
-//ytvid("https://youtube.com/shorts/Boep7EPKyas?si=ObS_GUDjtZhOser-")
+//ytvid("https://youtube.com/shorts/Boep7EPKyas?si=ObS_GUDjtZhOser-");
 
 //ytvid("https://vt.tiktok.com/ZS4Kc2jHg/");
 
