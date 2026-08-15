@@ -11,7 +11,7 @@ import { fileURLToPath } from "node:url";
 import { promisify } from "node:util";
 import path,{ join,dirname } from "node:path";
 const __dirname = dirname(fileURLToPath(import.meta.url));
-
+import Err from "./Err.js";
 
 
 //time delay for important information or functions that need some time instead of async-await..
@@ -82,8 +82,8 @@ fs.chmodSync(path.join(__dirname,`../binaries/${bin}`),0o755);
            console.log("\n\x1b[1;38mplease wait...\n\x1b[0m");
            await new Promise(resolve=>setTimeout(resolve,3000))
        }catch(err){
-        console.log(`\x1b[1;31mFailed to get data with request, ${JSON.stringify({ requestUrl : link }) }\x1b[0m`,err);
-         return;
+        Err(`Failed to get data with request, ${JSON.stringify({ requestUrl : link }) }`);
+         
        };
    };
        
@@ -167,7 +167,7 @@ return { video_only_hp:`${data[0]}\n`,
        
 };
     }catch(err){
-    return Err("an error occured executing command ytvid. If error persist, please report at https://github.com/cybercyphers/decifer/issues ")
+    Err("an error occured executing command ytvid. If error persist, please report at https://github.com/cybercyphers/decifer/issues ")
 }
    };      
 
