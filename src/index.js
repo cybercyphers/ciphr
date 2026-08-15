@@ -25,19 +25,6 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 
 
 
-/*since in  type : module, __dirname  is not defined, we define it  here to be accessible without manually defining path.join(__dirname); to help developers. 
-
-
-
-the placeholder should always be "import.meta.url" nothing else in order to resolve to the user's path directly instead of cyphr path...
-*/
-
-
-const __Dirname = (import_meta_url)=>{
-    return dirname(fileURLToPath(import_meta_url));
-};
-
- 
 
 //console.log(JSON.stringify(process.env));
 
@@ -53,8 +40,7 @@ const defaultTools = {
 
 
 export  {
-    defaultTools as default,
-    __Dirname
+    defaultTools as default
 };
 
 //EOF
