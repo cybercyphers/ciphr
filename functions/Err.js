@@ -10,7 +10,7 @@ var fallback_message = "wowdi, you caught a stubborn bug, report at https://gith
 const Err = (errMessage) =>{
  const secureErr =  errMessage ??  fallback_message;
   
-    console.log(`\x1b[31m${String(secureErr) || JSON.stringify(secureErr) || secureErr}\x1b[0m`);
+    console.trace(`\x1b[31m${String(secureErr) || JSON.stringify(secureErr) || secureErr}\x1b[0m`);
 }
 
 
