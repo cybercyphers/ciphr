@@ -1,4 +1,4 @@
-# decifer
+# decifer [BETA.1]
 
 > Sleek, lightweight, low-level data transformation and string obfuscation utility for terminal nodes. Built by **Cyber Cyphers**.
 
