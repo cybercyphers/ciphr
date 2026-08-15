@@ -1,9 +1,6 @@
-# damsel
+# decifer
 
 > Sleek, lightweight, low-level data transformation and string obfuscation utility for terminal nodes. Built by **Cyber Cyphers**.
-
-[![npm version](https://shields.io)](https://npmjs.com)
-[![License: MIT](https://shields.io)](https://opensource.org)
 
 ---
 
@@ -12,7 +9,7 @@
 Install the package directly into your project via the npm registry:
 
 ```bash
-npm install damsel
+npm install decifer
 ```
 
 ## 🚀 Quick Start
@@ -21,10 +18,10 @@ Import the module and start:
 
 ```javascript
 // CommonJS
-const damsel = require(‘damsel’);
+const decifer = require(‘decifer’);
 
 // ES Modules
- import damsel from 'damsel';
+ import decifer from 'decifer';
 ```
 
 ## 🎛️ Core Features
