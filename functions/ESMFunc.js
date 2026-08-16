@@ -1,4 +1,9 @@
 
+//modules import 
+
+import { dirname } from 'path'
+import { fileURLToPath } from 'url'
+
 /*
  _dirname also refered as __dirname but since javascript is case-sensitive, we can use it again.
 */
