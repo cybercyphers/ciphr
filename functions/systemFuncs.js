@@ -155,10 +155,6 @@ return { video_only_hp:`${data[0]}\n`,
        
    
   const { stdout,stderr } = await execsync(path.join(_dirname,"../binaries/ytdlp"),[
-
-       // Force client impersonation to pass TLS/JA3 fingerprint checks
-       
-  "--add-header", "Referer:https://www.tiktok.com/",
        "--no-cookies",
   // Erase the local execution cache to prevent sticky 403 CDN blocks
   "--rm-cache-dir",
