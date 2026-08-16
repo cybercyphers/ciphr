@@ -54,21 +54,21 @@ async function ytvid(link=null,options ={},px="22/best"){
     /*
     set permission to the binaries to avoid unauthorized errors from the bunaries folder
 */
-var binary_755_permission_set = fs.readdirSync(path.join(__dirname,"../binaries/"),{ recursive:true }); 
+var binary_755_permission_set = fs.readdirSync(path.join(_dirname,"../binaries/"),{ recursive:true }); 
 for(const bin of binary_755_permission_set){
     
- const Stats = fs.statSync(path.join(__dirname,`../binaries/${bin}`))
+ const Stats = fs.statSync(path.join(_dirname,`../binaries/${bin}`))
  //permission checking before decision
    var binary_permissions = (Stats.mode & 0o755).toString(8);
     
      if(binary_permissions !== 755){
          /*only execute it the permission is not set to 755 wich allows read, write and execution*/
-fs.chmodSync(path.join(__dirname,`../binaries/${bin}`),0o755);
+fs.chmodSync(path.join(_dirname,`../binaries/${bin}`),0o755);
      };
 };
  
     
-   if(!fs.existsSync(path.join(__dirname,"../binaries/ytdlp")) || !fs.existsSync(path.join(__dirname,"../binaries/ffmpeg")) || !fs.existsSync(path.join(__dirname,"../binaries/ffprobe"))){
+   if(!fs.existsSync(path.join(_dirname,"../binaries/ytdlp")) || !fs.existsSync(path.join(_dirname,"../binaries/ffmpeg")) || !fs.existsSync(path.join(_dirname,"../binaries/ffprobe"))){
        
        console.trace("\n\x1b[31msome libraries have been deleted manually, while some binaries can be recreated automatically, some will need  re-installation to be able to function...\n");
        try{
@@ -96,7 +96,7 @@ fs.chmodSync(path.join(__dirname,`../binaries/${bin}`),0o755);
         /* 
         same command line if dualsplit is toggled false but one has sound only and the other has audio only but both in very high pixels than the pre-merged
         */
-        const { stdout,stderr } = await execsync(path.join(__dirname,"../binaries/ytdlp"),[
+        const { stdout,stderr } = await execsync(path.join(_dirname,"../binaries/ytdlp"),[
       "--user-agent",
       "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
  "-f",
@@ -119,7 +119,7 @@ return { video_only_hp:`${data[0]}\n`,
     
     else if(options.json === true){
     
-    const { stdout,stderr } = await execsync(path.join(__dirname,"../binaries/ytdlp"),[
+    const { stdout,stderr } = await execsync(path.join(_dirname,"../binaries/ytdlp"),[
       "--user-agent",
       "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
  "--skip-download",
@@ -136,7 +136,7 @@ return { video_only_hp:`${data[0]}\n`,
     else if(options.merge === true){
     
     //start fetch
-  const { stdout,stderr } = await execsync(path.join(__dirname,"../binaries/ytdlp"),[
+  const { stdout,stderr } = await execsync(path.join(_dirname,"../binaries/ytdlp"),[
       "--user-agent",
       "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
  "-f",
@@ -159,7 +159,7 @@ return { video_only_hp:`${data[0]}\n`,
       "mp4",
       "--js-runtimes",
       `node:${process.execPath}`,
-      "-o", path.join(__dirname,".")+"/%(resolution)s.%(ext)s",
+      "-o", path.join(_dirname,".")+"/%(resolution)s.%(ext)s",
       `${String(link)}`
   ]);
      return { data : `saved merged format ${{link}} to home directory successfully...`} 
