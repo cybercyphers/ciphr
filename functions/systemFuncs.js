@@ -161,7 +161,6 @@ return { video_only_hp:`${data[0]}\n`,
   "--impersonate", "chrome",
   // Erase the local execution cache to prevent sticky 403 CDN blocks
   "--rm-cache-dir",
-  "--add-header", "Sec-Fetch-Mode: navigate",   
       "--user-agent",
       "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
  "-f",
