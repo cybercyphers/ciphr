@@ -1,4 +1,8 @@
 
+
+import { dirname } from "node:path";
+import { fileURLToPath } from "node:url";
+
 /*
 @param { parameter | null | undefined } errMessage - message to be returned or logged to console it an error occures.
 
