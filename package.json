@@ -3,19 +3,8 @@
   "version": "0.0.3",
   "description": "You very own toolkit ready to use for development.",
   "type": "module",
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "exports": {
-    ".": {
-      "types": {
-        "require": "./dist/index.d.cts",
-        "default": "./dist/index.d.ts"
-      },
-      "require": "./dist/index.cjs",
-      "default": "./dist/index.js"
-    }
-  },
+  "main": "index.js",
+
   "files": [
     "dist",
     "src/",
@@ -23,7 +12,7 @@
     "functions/"
   ],
   "scripts": {
-    "build": "tsup src/index.js --format cjs,esm --dts --clean --shims",
+    "build": "tsup src/index.js --format cjs,esm --dts --clean",
     "prepublishOnly": "npm run build",
     "test": "echo \"No tests\" && exit 0"
   },
