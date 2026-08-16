@@ -14,14 +14,15 @@ this package function is to help developers log info and debug their code on run
 
 
 import fs from "node:fs";
-import path,{ join,dirname } from "node:path";
+import path,{ dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import {
     sleep,
     UUID as randomuuid,
     ytvid
 } from "../functions/systemFuncs.js";
-const __dirname = dirname(fileURLToPath(import.meta.url));
+
+const _dirname =typeof __dirname !== 'undefined' ? __dirname : dirname(fileURLToPath(import.meta.url));
 
 
 
