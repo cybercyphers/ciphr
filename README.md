@@ -1,6 +1,8 @@
 # decifer [BETA]
 
-> Sleek, lightweight, low-level data transformation and string obfuscation utility for terminal nodes. Built by **Cyber Cyphers**.
+> Sleek, lightweight, data transformation and string obfuscation utility for terminal nodes.
+> This package provide developer utilities for development.
+> Built by **Cyber Cyphers**.
 
 
 [![Socket Badge](https://badge.socket.dev/npm/package/decifer/0.0.1)](https://badge.socket.dev/npm/package/decifer/0.0.1)
