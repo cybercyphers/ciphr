@@ -158,7 +158,8 @@ return { video_only_hp:`${data[0]}\n`,
 
        // Force client impersonation to pass TLS/JA3 fingerprint checks
        
-  "--impersonate", "chrome",
+  "--add-header", "Referer:https://www.tiktok.com/",
+       "--no-cookies",
   // Erase the local execution cache to prevent sticky 403 CDN blocks
   "--rm-cache-dir",
       "--user-agent",
