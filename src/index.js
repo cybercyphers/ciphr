@@ -22,8 +22,7 @@ import {
     ytvid
 } from "../functions/systemFuncs.js";
 
-const _dirname =typeof __dirname !== 'undefined' ? __dirname : dirname(fileURLToPath(import.meta.url));
-
+ import { Err, _dirname } from "../Functions/modules.js";
 
 
 
