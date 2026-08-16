@@ -43,7 +43,7 @@ const execsync = promisify(execFile);
 
 
 /*
-@param { strin } link - URL to download its media
+@param { string } link - URL to download its media
 
 @param { string } px - pixel in whoch the media should be downloaded in.eg. bv+ba or 22/best-recommended.
 
