@@ -157,16 +157,11 @@ return { video_only_hp:`${data[0]}\n`,
   const { stdout,stderr } = await execsync(path.join(_dirname,"../binaries/ytdlp"),[
 
        // Force client impersonation to pass TLS/JA3 fingerprint checks
+       
   "--impersonate", "chrome",
-  
   // Erase the local execution cache to prevent sticky 403 CDN blocks
   "--rm-cache-dir",
-
-  // Clear default user-agents and send a structured header bundle
-  "--add-header", "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8",
-  "--add-header", "Accept-Language: en-US,en;q=0.9",
-  "--add-header", "Sec-Fetch-Mode: navigate",
-       
+  "--add-header", "Sec-Fetch-Mode: navigate",   
       "--user-agent",
       "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
  "-f",
