@@ -22,7 +22,7 @@ import {
     ytvid
 } from "../functions/systemFuncs.js";
 
- import { Err, _dirname } from "../Functions/modules.js";
+ import { Err, _dirname } from "../functions/modules.js";
 
 
 
