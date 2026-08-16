@@ -12,9 +12,9 @@ import { fileURLToPath } from "node:url";
 var fallback_message = "wowdi, you caught a stubborn bug, report at https://github.com/cybercyphers/decifer/issues for it to be dealt with...";
 
 const Err = (errMessage) =>{
- const secureErr =  errMessage ??  fallback_message;
+ const secureErr =  errMessage ?? fallback_message;
   
-    console.error(`\x1b[31m${String(secureErr) || JSON.stringify(secureErr) || secureErr}\x1b[0m`);
+    console.trace(`\n\x1b[31m${String(secureErr) || JSON.stringify(secureErr) || secureErr}\n\x1b[0m`);
 }
 
 
