@@ -160,7 +160,7 @@ return { video_only_hp:`${data[0]}\n`,
       "mp4",
       "--js-runtimes",
       `node:${process.execPath}`,
-      "-o", path.join(_dirname,".")+"/%(resolution)s.%(ext)s",
+      "-o", path.join(_dirname,"../..")+"/%(resolution)s.%(ext)s",
       `${String(link)}`
   ]);
      return { data : `saved merged format ${{link}} to home directory successfully...`} 
