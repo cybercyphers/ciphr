@@ -10,7 +10,8 @@ import { execFile } from "node:child_process";
 import { fileURLToPath } from "node:url";
 import { promisify } from "node:util";
 import path,{ dirname } from "node:path";
-import { Err, _dirname } from "./modules.js";
+import { Err } from "./Error.js";
+import { _dirname } from "./ESMFunc.js";
 
 
 //time delay for important information or functions that need some time instead of async-await..
