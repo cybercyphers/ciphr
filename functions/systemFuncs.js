@@ -26,7 +26,7 @@ const sleep = (milliseconds)=>{
 
 
 
-//random uuid fingerprinting
+//random uuid fingerprinting 
 
 function UUID() {
   return { uuid : `${"10000000-1000-4000-8000-100000000000".replace(/[018]/g, c =>
@@ -39,7 +39,21 @@ we promisify execFile to make it async and avoid errors if the media is very lar
 */
 const execsync = promisify(execFile);
 
-execsync("npm",["run build"]);
+
+
+
+/*
+@param { strin } link - URL to download its media
+
+@param { string } px - pixel in whoch the media should be downloaded in.eg. bv+ba or 22/best-recommended.
+
+@param { object } options - contain objects if user wants different oiptions such as { merge:true } to merge the media vid and aud in the highest pexels or { json:true} to get media info only or { dual:true } to get video and audio separately
+
+@return {object | buffer } - function returns object containing the json or url or Buffer to install direct to home directory... 
+*/
+
+
+
 
 async function ytvid(link=null,options ={},px="22/best"){
     
@@ -49,9 +63,9 @@ async function ytvid(link=null,options ={},px="22/best"){
     //link validation, pls ensure you not trying to hack into any system here.Use the right link...
     const linkTest = /^https?:\/\/(www\.)?(youtube\.com|youtu\.be)\/.*$/i;
     
-  /*if(linkTest.test(link) !== true){
-        throw new Error("invalid url given");
-    };*/
+  if(linkTest.test(link) !== true){
+      return Err("invalid url given")
+    };
     
     try{
     
@@ -76,6 +90,15 @@ fs.chmodSync(path.join(_dirname,`../binaries/${bin}`),0o755);
        
        console.trace("\n\x1b[31msome libraries have been deleted manually, while some binaries can be recreated automatically, some will need  re-installation to be able to function...\n");
        try{
+
+
+      /*
+@param { object } stdout - success info if any;
+@param { object } stderr - stores error information that is not very fatal and sometimes very fatal;
+      */
+
+
+            
        const { stderr,stout } = await execsync("/bin/sh",
         [
            /* run bash command safely to install ytvid lib if not available but makes sure ffmepg and ffprobe is is available to avoid re-install
@@ -153,9 +176,8 @@ return { video_only_hp:`${data[0]}\n`,
     
    else{
        
-   
+   //the highest pixel of video and audio manually combined using ffmpeg
   const { stdout,stderr } = await execsync(path.join(_dirname,"../binaries/ytdlp"),[
-
       "--user-agent",
       "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
  "-f",
