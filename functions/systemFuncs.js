@@ -132,7 +132,7 @@ return { video_only_hp:`${data[0]}\n`,
     } 
     
     /*
-@param {object} options.mergeUrl - give stream url as one
+@param {object} options.mergeUrl - respond with  stream url as one
 */  
     else if(options.merge === true){
     
@@ -160,7 +160,7 @@ return { video_only_hp:`${data[0]}\n`,
       "mp4",
       "--js-runtimes",
       `node:${process.execPath}`,
-      "-o", path.join(_dirname,"..")+"/%(resolution)s.%(ext)s",
+      "-o", path.join(_dirname,"../..")+"/%(resolution)s.%(ext)s",
       `${String(link)}`
   ]);
      return { data : `saved merged format ${{link}} to home directory successfully...`} 
