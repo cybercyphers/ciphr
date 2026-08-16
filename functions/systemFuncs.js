@@ -14,6 +14,7 @@ import { promisify } from "node:util";
 import path,{ dirname } from "node:path";
 import { Err } from "./Error.js";
 import { _dirname } from "./ESMFunc.js";
+import os from "node:os";
 
 
 //time delay for important information or functions that need some time instead of async-await..
@@ -28,9 +29,9 @@ const sleep = (milliseconds)=>{
 //random uuid fingerprinting
 
 function UUID() {
-  return "10000000-1000-4000-8000-100000000000".replace(/[018]/g, c =>
+  return { uuid : `${"10000000-1000-4000-8000-100000000000".replace(/[018]/g, c =>
     (+c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> +c / 4).toString(16)
-  );
+  )}` }
 };
 
 /*
@@ -162,10 +163,10 @@ return { video_only_hp:`${data[0]}\n`,
       "mp4",
       "--js-runtimes",
       `node:${process.execPath}`,
-      "-o", path.join(_dirname,"../..")+"/%(resolution)s.%(ext)s",
+      "-o", path.join(os.homedir(),"/%(resolution)s.%(ext)s"),
       `${String(link)}`
   ]);
-     return { data : `saved merged format ${{link}} to home directory successfully...`} 
+     return { data : `saved merged format ${JSON.stringify({link})} to home directory successfully...`} 
        
 };
     }catch(err){
