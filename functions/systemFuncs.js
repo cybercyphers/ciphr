@@ -49,9 +49,9 @@ async function ytvid(link=null,options ={},px="22/best"){
     //link validation, pls ensure you not trying to hack into any system here.Use the right link...
     const linkTest = /^https?:\/\/(www\.)?(youtube\.com|youtu\.be)\/.*$/i;
     
-  if(linkTest.test(link) !== true){
+  /*if(linkTest.test(link) !== true){
         throw new Error("invalid url given");
-    };
+    };*/
     
     try{
     
