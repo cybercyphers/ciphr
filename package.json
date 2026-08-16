@@ -1,7 +1,7 @@
 {
   "name": "decifer",
   "version": "0.0.1",
-  "description": "Developer package for Devs",
+  "description": "You very own toolkit ready to use for development.",
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
@@ -31,13 +31,21 @@
     "matrix",
     "decentralized",
     "Developer",
-    "APIS"
+    "toolkit",
+    "media editing",
+    "youtube download",
+    "cyber cyphers",
+    "video download"
+    
   ],
   "author": "cyber cyphers",
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cybercyphers/decifer"
+  },
+
+  "bugs":{ "url":"https://github.com/cybercyphers/decifer/issues"
   },
   "devDependencies": {
     "tar": "^7.5.22",
