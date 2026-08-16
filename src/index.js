@@ -1,4 +1,7 @@
-"use strict";
+#!/usr/bin/env node
+
+//@ts-check
+
 
 //Ready to brainstorm....
 
