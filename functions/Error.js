@@ -14,7 +14,7 @@ var fallback_message = "wowdi, you caught a stubborn bug, report at https://gith
 const Err = (errMessage) =>{
  var secureErr =  errMessage ?? fallback_message;
 
- var secureErrValidation = typeof secureErr === 'object' ? JSON.stringify(secureErr) : String(secureError);
+ var secureErrValidation = typeof secureErr === 'object' ? JSON.stringify(secureErr) : String(secureErr);
   
     console.trace(`\n\x1b[31m${secureErrValidation}\n\x1b[0m`);
 }
