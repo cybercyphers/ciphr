@@ -1,4 +1,4 @@
-"use strict";
+//@ts-check
 
 /*
 for function that are needed daily in the system.
