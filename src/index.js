@@ -1,8 +1,10 @@
+"use strict";
+
 //Ready to brainstorm....
 
 /*
 
-this package function is to help developers log info and debug their code on runtime
+This package's function is to help developers log info and debug their code on runtime and also use simple tools that dont necessarily need rebuild.
 
 
 */
