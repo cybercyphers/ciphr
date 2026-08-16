@@ -1,3 +1,5 @@
+"use strict";
+
 /*
 for function that are needed daily in the system.
 these functions are system functions..
