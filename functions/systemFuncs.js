@@ -9,9 +9,8 @@ import fs from "node:fs";
 import { execFile } from "node:child_process";
 import { fileURLToPath } from "node:url";
 import { promisify } from "node:util";
-import path,{ join,dirname } from "node:path";
-const __dirname = dirname(fileURLToPath(import.meta.url));
-import Err from "./Err.js";
+import path,{ dirname } from "node:path";
+import { Err, _dirname } from "./modules.js";
 
 
 //time delay for important information or functions that need some time instead of async-await..
