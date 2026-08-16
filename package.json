@@ -1,6 +1,6 @@
 {
   "name": "decifer",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "You very own toolkit ready to use for development.",
   "type": "module",
   "main": "./dist/index.cjs",
