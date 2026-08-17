@@ -15,6 +15,7 @@ import path,{ dirname } from "node:path";
 import { Err } from "./Error.js";
 import { _dirname } from "./ESMFunc.js";
 import os from "node:os";
+import crypto from "node:crypto";
 
 
 //time delay for important information or functions that need some time instead of async-await..
@@ -72,7 +73,7 @@ async function ytvid(link=null,options ={},px="22/best"){
     /*
     set permission to the binaries to avoid unauthorized errors from the bunaries folder
 */
-var binary_755_permission_set = fs.readdirSync(path.join(_dirname,"../binaries/"),{ recursive:true }); 
+var binary_755_permission_set = fs.readdirSync(path.join(_dirname,"../binaries/")); 
 for(const bin of binary_755_permission_set){
     
  const Stats = fs.statSync(path.join(_dirname,`../binaries/${bin}`))
@@ -104,7 +105,7 @@ fs.chmodSync(path.join(_dirname,`../binaries/${bin}`),0o755);
            /* run bash command safely to install ytvid lib if not available but makes sure ffmepg and ffprobe is is available to avoid re-install
            */
            "-c","curl -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -o /home/container/binaries/ytdlp && chmod a+rx /home/container/binaries/ytdlp && /home/container/binaries/ytdlp -U"
-       ],{ shell : true });
+       ]);
            console.log("\n\x1b[1;38mplease wait...\n\x1b[0m");
            await new Promise(resolve=>setTimeout(resolve,3000))
        }catch(err){
