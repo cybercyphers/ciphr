@@ -24,7 +24,8 @@ import { fileURLToPath } from "node:url";
 import {
     sleep,
     UUID as randomuuid,
-    ytvid
+    ytvid,
+    toBinary
 } from "../functions/systemFuncs.js";
 
  import { Err } from "../functions/Error.js";
