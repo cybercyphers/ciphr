@@ -196,14 +196,41 @@ return { video_only_hp:`${data[0]}\n`,
     }catch(err){
     Err(`an error occured executing command ytvid, ${String(err) || JSON.stringify(err)}. If error persist, please report at https://github.com/cybercyphers/decifer/issues`)
 }
-   };      
+   };   
 
+
+//test
 //ytvid("https://youtube.com/shorts/Boep7EPKyas?si=ObS_GUDjtZhOser-");
 
-//ytvid("https://vt.tiktok.com/ZS4Kc2jHg/");
+//ytvid("https://vt.tiktok.com/ZS4Kc2jHg/",{dual:true});
+
+
+
+
+
+
+
+
+/*
+@param {any} text - string | object | number and type any to convert to computer binary (1s and 0s) 
+*/
+
+const toBinary = (text)=>{
+     if(!text){
+     return Err("cannot comvert undefined to binary")
+     };
+
+     var complete_binary = [...Buffer.from(text)].map(byte=>byte.toString(2).padStart(8,"0")).join("")               
+
+     return { binary:complete_binary };
+    
+}
+
+
 
 export {
     sleep,
 UUID,
-  ytvid  
+  ytvid,
+     toBinary
 }
