@@ -46,7 +46,8 @@ const defaultTools = {
 
 
 export  {
-    defaultTools as default
+    defaultTools as default,
+    toBinary
 };
 
 //EOF
