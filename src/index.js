@@ -18,9 +18,9 @@ This package's function is to help developers log info and debug their code on r
 
 
 
-import fs from "node:fs";
+/*import fs from "node:fs";
 import path,{ dirname } from "node:path";
-import { fileURLToPath } from "node:url";
+import { fileURLToPath } from "node:url";*/
 import {
     sleep,
     UUID as randomuuid,
