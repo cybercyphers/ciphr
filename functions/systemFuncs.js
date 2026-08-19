@@ -224,7 +224,46 @@ const toBinary = (text)=>{
 
      return { binary:complete_binary };
     
-}
+};
+
+
+
+/*
+@param { string | number } binary - only binary. eg. (1s or 0s) accepted to convert to human-readable;
+@return { string } - type string is return mmmm; 
+*/
+
+
+
+function toUtf8(binary){
+  if(!binary){
+    return Err("expected type string | number but received type undefined")
+  };
+
+  if(typeof binary !== 'string'){
+    return Err("type octal literal is not accepted, { recommended:'string | number' }")
+  }
+  
+  let bitArray =[]
+  let new_readable_array = [];
+    for(let i=0; i < binary.length; i+=8){
+      var binarySlice = binary.slice(i,i+8)
+    bitArray.push(binarySlice)
+    }
+
+  for(var bit of bitArray){
+    var parsedBit = parseInt(bit,2)
+     var readable_string = String.fromCharCode(parsedBit)
+  //console.log(readable_string)
+     var final = new_readable_array.push(readable_string);
+  }
+ var final_utf8 =  new_readable_array.join("")
+
+  return { utf8 : final_utf8 }
+  
+};
+
+
 
 
 
@@ -232,5 +271,6 @@ export {
     sleep,
 UUID,
   ytvid,
-     toBinary
+     toBinary,
+     toUtf8
 }
