@@ -9,9 +9,8 @@ these functions are system functions..
 
 import fs from "node:fs";
 import { execFile } from "node:child_process";
-import { fileURLToPath } from "node:url";
 import { promisify } from "node:util";
-import path,{ dirname } from "node:path";
+import path from "node:path";
 import { Err } from "./Error.js";
 import { _dirname } from "./ESMFunc.js";
 import os from "node:os";
