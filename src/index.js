@@ -25,7 +25,8 @@ import {
     sleep,
     UUID as randomuuid,
     ytvid,
-    toBinary
+    toBinary,
+    toUtf8
 } from "../functions/systemFuncs.js";
 
  import { Err } from "../functions/Error.js";
@@ -48,7 +49,8 @@ const defaultTools = {
 
 export  {
     defaultTools as default,
-    toBinary
+    toBinary,
+    toUtf8
 };
 
 //EOF
