@@ -19,38 +19,33 @@ npm install decifer
 
 ## 🚀 Quick Start
 
-Import the module and start:
+### some kits available are:
+>toBinary
 
+>toUtf8
+
+
+CommonJs:
 ```javascript
 // CommonJS
 const decifer = require(‘decifer’);
 ```
 
+
+ES module example:
 ```typescript
 // TypeScript or Javascript
 
- import decifer, { toBinary, toUtf8 } from 'decifer';
+import { toBinary, toUtf8 } from 'decifer';
 
-/*
-@return {string} - The return statement is always a a number in 1s and 0s;
-*/
-var computerBinary:string = toBinary('Text to binary’);
+ var computerBinary:string = toBinary('Text to binary');
+  console.log(computerBinary)
+  console.log(typeof computerBinary) //string
 
-console.log(computerBinary)
-
-
+var humanReadable:string = toUtf8('10101011000');
+  console.log(humanReadable)  // readable string 
 ```
 
-some kits available are:
->toBinary
-
->toUtf8
-```javascript
-//import 
-import { toBinary } from 'decifer';
-
- console.log(toBinary('Text to binary'));
-```
 
 ## 🎛️ Core Features
 
